@@ -19,12 +19,21 @@ public class execute_cc extends Connecting_to_db{
 		exe.executeScript("document.getElementById('accord-" + topicname +"')?.click();");
 		
 		System.out.println(" "+programid);
+		System.out.println("This is"+" "+programname);
+		 String text=" "+programname;
+		 for(WebElement click:solve)
+			{
+				
+				
+			 actions.moveToElement(click).click().perform();
+			}
 		
-         WebElement w1=driver.findElement(By.xpath("//*[text()=programname]"));
-		 exe.executeScript("window.scrollBy(0,250)", "w1");
-		 w1.click();
+       //  WebElement w1=driver.findElement(By.xpath("//*[text()=text]"));
+       //  System.out.println(w1);
+         exe.executeScript("window.scrollBy(0,250)", "w1");
+		// w1.click();
 		 //run button as RB1
-		 System.out.println(" "+programname);
+		 
 		 
 		WebElement r1=driver.findElement(By.xpath("//*[@data-intro='Button to run the code']"));
 	exe.executeScript("window.scrollBy(0,250)", r1);

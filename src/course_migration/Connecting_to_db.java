@@ -1,12 +1,17 @@
 package course_migration;
 
+import java.awt.Desktop.Action;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class Connecting_to_db extends login {
 	static String programid;
@@ -17,6 +22,9 @@ public class Connecting_to_db extends login {
 	  static ResultSet rs;
 	  static  String programtype;
 	  static String programname;
+	  static List<WebElement> solve;
+	  static Actions actions;
+	  static WebElement click;
 		public static void courseid() throws SQLException, InterruptedException {
 			// TODO Auto-generated method stub
 			String SQL;
@@ -59,6 +67,11 @@ public class Connecting_to_db extends login {
 	
 		Program_type Pt=new Program_type();
 		Pt.programtype();
+		solve=driver.findElements(By.xpath("//*[@class='btn small-padding btn-outline-success ng-star-inserted']"));
+		//int i = 1;
+		actions = new Actions(driver);
+		//int solve=integer.pasrseInt(solve);
+		
 		
 	}	
 	System.out.println("connected to db");
